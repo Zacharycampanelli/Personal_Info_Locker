@@ -5,14 +5,13 @@ const routes = require('./controllers/');
 const sequelize = require('./config/connection');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+
 // const routes = require('./controllers');
 
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const sequelize = require("./config/connection");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 
@@ -20,8 +19,7 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(routes);
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+//app.use(routes);
 
 const sess = {
   secret: 'Super secret secret',
