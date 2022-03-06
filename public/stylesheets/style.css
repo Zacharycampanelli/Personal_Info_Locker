@@ -18,11 +18,6 @@
     color: #F2F7FF
   }
 
-img {
-   width: 50px;
-   height: 50px 
-}
-
   /* Style the collapsible content. Note: hidden by default */
   .content {
     padding: 0 18px;
@@ -31,4 +26,7 @@ img {
     color: #F2F7FF;
   }
 
-  
+.welcome-title {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
