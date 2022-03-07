@@ -118,10 +118,6 @@
   "bugs": {
     "url": "https://github.com/Zacharycampanelli/Personal_Info_Locker/issues"
   },
-<<<<<<< HEAD
-  "homepage": "https://github.com/Zacharycampanelli/Personal_Info_Locker#readme",
-  "keywords": []
-=======
   "homepage": "https://github.com/Zacharycampanelli/Project2#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -136,5 +132,4 @@
     "mysql2": "^2.3.3",
     "sequelize": "^6.17.0"
   }
->>>>>>> d3678c2a75583f8f2d00ae5bc4ae103567b25f66
 }
