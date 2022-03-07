@@ -25,13 +25,8 @@ saveBtn.onclick = function () {
 
 }
 
-
-
-// okay and this one needs to be tweaked so added passwords are also collapsible
-
 $(document).click(function (event) {
-
-
+    
     var coll = document.getElementsByClassName("collapsible");
     var i;
 
