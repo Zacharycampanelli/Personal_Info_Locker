@@ -34,9 +34,9 @@ Password.init(
     website_url: {
       type: DataTypes.STRING,
       allowNull: false,
-      // validate: {
-      //   is
-      // }
+      validate: { 
+        isUrl: true
+       }
       
     }, 
     user_id: {
