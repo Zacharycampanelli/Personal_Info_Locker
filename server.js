@@ -13,9 +13,13 @@ const sequelize = require('./config/connection');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+const tenMin = 1000*60*10;
+
 const sess = {
   secret: 'Super secret secret',
-  cookie: {},
+  cookie: {
+    maxAge: tenMin
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
