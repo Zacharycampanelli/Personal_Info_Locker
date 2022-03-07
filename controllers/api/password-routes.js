@@ -104,7 +104,7 @@ router.post('/', (req, res) => {
     });
 });
 
-// PUT /api/posts/id
+// PUT /api/password/id
 router.put('/:id', (req, res) => {
   Password.update(
     {
@@ -142,7 +142,7 @@ router.delete('/:id', (req, res) => {
   })
     .then((dbPasswordData) => {
       if (!dbPasswordData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: 'No password found with this id' });
         return;
       }
       res.json(dbPasswordData);

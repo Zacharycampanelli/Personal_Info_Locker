@@ -1,19 +1,19 @@
 const router = require("express").Router();
-const { Post } = require("../models/");
+const { Password } = require("../models/");
 const withAuth = require("../utils/auth");
 
 router.get("/", withAuth, (req, res) => {
-    Post.findAll({
+    Password.findAll({
         where: {
-            userId: req.session.userId
+            id: req.session.id
         }
     })
-        .then(dbPostData => {
-            const posts = dbPostData.map((post) => post.get({ plain: true }));
+        .then(dbPasswordData => {
+            const passwords = dbPasswordData.map((password) => password.get({ plain: true }));
 
-            res.render("all-posts-admin", {
+            res.render("all-passwords-admin", {
                 layout: "dashboard",
-                posts
+                passwords
             });
         })
         .catch(err => {
@@ -23,20 +23,20 @@ router.get("/", withAuth, (req, res) => {
 });
 
 router.get("/new", withAuth, (req, res) => {
-    res.render("new-post", {
+    res.render("new-password", {
         layout: "dashboard"
     });
 });
 
 router.get("/edit/:id", withAuth, (req, res) => {
-    Post.findByPk(req.params.id)
-        .then(dbPostData => {
-            if (dbPostData) {
-                const post = dbPostData.get({ plain: true });
+    Password.findByPk(req.params.id)
+        .then(dbPasswordData => {
+            if (dbPasswordData) {
+                const password = dbPasswordData.get({ plain: true });
 
-                res.render("edit-post", {
+                res.render("edit-passwords", {
                     layout: "dashboard",
-                    post
+                    password
                 });
             } else {
                 res.status(404).end();

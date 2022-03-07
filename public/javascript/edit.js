@@ -1,12 +1,12 @@
-const postId = document.querySelector('input[name="post-id"]').value;
+const passwordId = document.querySelector('input[name="password-id"]').value;
 
 const editFormHandler = async function (event) {
     event.preventDefault();
 
-    const title = document.querySelector('input[name="post-title"]').value;
-    const body = document.querySelector('textarea[name="post-body"]').value;
+    const title = document.querySelector('input[name="password-title"]').value;
+    const body = document.querySelector('textarea[name="password-body"]').value;
 
-    await fetch(`/api/post/${postId}`, {
+    await fetch(`/api/password/${passwordId}`, {
         method: 'PUT',
         body: JSON.stringify({
             title,
@@ -21,7 +21,7 @@ const editFormHandler = async function (event) {
 };
 
 const deleteClickHandler = async function () {
-    await fetch(`/api/post/${postId}`, {
+    await fetch(`/api/password/${passwordId}`, {
         method: 'DELETE'
     });
 
@@ -29,7 +29,7 @@ const deleteClickHandler = async function () {
 };
 
 document
-    .querySelector('#edit-post-form')
+    .querySelector('#edit-password-form')
     .addEventListener('submit', editFormHandler);
 document
     .querySelector('#delete-btn')
