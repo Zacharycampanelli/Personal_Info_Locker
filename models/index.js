@@ -1,6 +1,4 @@
 const User = require('./User');
-const Post = require('./Post');
-const Comment = require('./Comment');
 const Password = require('./Password');
 
 User.hasMany(Password, {
@@ -32,7 +30,5 @@ Comment.belongsTo(User, {
 
 module.exports = {
     User,
-    Comment,
-    Post,
     Password
 };
