@@ -19,25 +19,26 @@ saveBtn.onclick = function () {
     var password = $("<p>").addClass("content").text(websitePassword);
 
     $(row).append(websiteInfo, password);
+
     $(".container").append(row);
+    $("#collapsible").trigger('create');
 
 }
 
+$(document).click(function (event) {
+    
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
 
-
-// okay and this one needs to be tweaked so added passwords are also collapsible
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-
-for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-    });
-}
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+})
