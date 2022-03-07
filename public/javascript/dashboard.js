@@ -16,7 +16,7 @@ saveBtn.onclick = function () {
 
     var row = $("<div>").addClass("row my-1 row-color");
     var websiteInfo = $("<p>").addClass("text-center text-white my-1 collapsible").text(websiteName);
-    var password = $("<p>").addClass("content").text(websitePassword);
+    var password = $("<p>").addClass("content").text("password: " + websitePassword);
 
     $(row).append(websiteInfo, password);
 

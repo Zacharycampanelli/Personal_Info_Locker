@@ -17,7 +17,6 @@
         <h1 class="app-title"><a href="/">Dashboard</a></h1>
         <nav class="navbar">
             <ul class="flex-row">
-                <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
                 <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
             </ul>
         </nav>
@@ -25,9 +24,6 @@
 
     <main class="col-auto">
         {{{body}}}
-
-        <!-- Button HTML (to Trigger Modal) -->
-        <button type="button" class=" btn modalbtn btn-primary">Store New Password</button>
 
         <!-- Modal HTML -->
         <div id="myModal" class="modal" tabindex="-1">
@@ -60,27 +56,38 @@
             </div>
         </div>
 
+
+
         <!-- Rows of Passwords -->
+
         <div class="container container-color">
-            <div class="row my-1 row-color ">
-                <p class="text-center text-white my-1 collapsible">Google</p>
-                <p class="content">password: testing</p>
-            </div>
-            <div class="row my-1 row-color">
-                <p class="text-center text-white my-1 collapsible">Facebook</p>
-                <p class="content">password: testing</p>
-            </div>
-            <div class="row my-1 row-color">
-                <p class="text-center text-white my-1 collapsible">Instagram</p>
-                <p class="content">password: testing</p>
-            </div>
-            <div class="row my-1 row-color">
-                <p class="text-center text-white my-1 collapsible">Twitter</p>
-                <p class="content">password: testing</p>
-            </div>
-            <div class="row my-1 row-color">
-                <p class="text-center text-white my-1 collapsible">Gmail</p>
-                <p class="content">password: testing</p>
+            <div class="row">
+                <!-- Button HTML (to Trigger Modal) -->
+                <div class="col-3 align-self-center">
+                    <button type="button" class=" btn modalbtn btn-primary">Store New Password</button>
+                </div>
+                <div class="col-9">
+                    <div class="row my-1 row-color ">
+                        <p class="text-center text-white my-1 collapsible">Google</p>
+                        <p class="content">password: testing</p>
+                    </div>
+                    <div class="row my-1 row-color">
+                        <p class="text-center text-white my-1 collapsible">Facebook</p>
+                        <p class="content">password: testing</p>
+                    </div>
+                    <div class="row my-1 row-color">
+                        <p class="text-center text-white my-1 collapsible">Instagram</p>
+                        <p class="content">password: testing</p>
+                    </div>
+                    <div class="row my-1 row-color">
+                        <p class="text-center text-white my-1 collapsible">Twitter</p>
+                        <p class="content">password: testing</p>
+                    </div>
+                    <div class="row my-1 row-color">
+                        <p class="text-center text-white my-1 collapsible">Gmail</p>
+                        <p class="content">password: testing</p>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
