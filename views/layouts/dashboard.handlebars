@@ -34,7 +34,14 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <div class="form-group">
+                        {{#each passwords as |password|}}
+                        <li>
+                           {{>password-info password}}
+                              
+                            
+                        </li>
+                        {{/each}}
+                        {{!-- <div class="form-group">
                             <label>Wesbite Name</label>
                             <div>
                                 <input id="website-name" class="form-control" type="text" placeholder=" ex. 'Google' ">
@@ -45,7 +52,7 @@
                             <div>
                                 <input id="website-password" class="form-control" type="text"
                                     placeholder="your password">
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="modal-footer">

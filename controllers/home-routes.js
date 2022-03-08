@@ -1,21 +1,11 @@
 const router = require("express").Router();
 const { Password, User } = require("../models/");
 
-// get all passwords for homepage
-router.get("/", (req, res) => {
-    Password.findAll({
-        include: [User],
-    })
-        .then((dbPasswordData) => {
-            const passwords = dbPasswordData.map((password) => password.get({ plain: true }));
 
-            res.render("all-passwords", { passwords });
-        })
-        .catch((err) => {
-            res.status(500).json(err);
-        });
-});
+// !!! Change to render welcome page
 
+
+// Dont need?
 // get single password
 router.get("/password/:id", (req, res) => {
     Password.findByPk(req.params.id, {

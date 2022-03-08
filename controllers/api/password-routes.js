@@ -2,31 +2,49 @@ const router = require('express').Router();
 const { Password, User } = require('../../models');
 const sequelize = require('../../config/connection');
 
-// GET /api/password
-router.get('/', (req, res) => {
+
+// get all passwords for homepage
+router.get("/", (req, res) => {
   Password.findAll({
-    attributes: [
-      'id',
-      'email',
-      'username',
-      'password',
-      'website_url',
-      'updated_at',
-    ],
-    order: [['updated_at', 'DESC']],
-    include: [
-      {
-        model: User,
-        attributes: ['username'],
-      },
-    ],
+      include: [User],
   })
-    .then((dbPasswordData) => res.json(dbPasswordData))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+      .then((dbPasswordData) => {
+          const passwords = dbPasswordData.map((password) => password.get({ plain: true }));
+
+          res.render("all-passwords", { passwords });
+      })
+      .catch((err) => {
+          res.status(500).json(err);
+      });
 });
+
+
+
+// GET /api/password
+// router.get('/', (req, res) => {
+//   Password.findAll({
+//     attributes: [
+//       'id',
+//       'email',
+//       'username',
+//       'password',
+//       'website_url',
+//       'updated_at',
+//     ],
+//     order: [['updated_at', 'DESC']],
+//     include: [
+//       {
+//         model: User,
+//         attributes: ['username'],
+//       },
+//     ],
+//   })
+//     .then((dbPasswordData) => res.json(dbPasswordData))
+//     .catch((err) => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
 
 // GET /api/password
 router.get('/', (req, res) => {
