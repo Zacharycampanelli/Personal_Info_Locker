@@ -6,6 +6,10 @@ router.get('/', (req, res) => {
   res.render('dashboard', { loggedIn: true });
 });
 
+router.post('/api/password', (req, res) => {
+  res.render('new-password', { loggedIn: true });
+});
+
 
 // router.get('/', withAuth, (req, res) => {
 //   Password.findAll({

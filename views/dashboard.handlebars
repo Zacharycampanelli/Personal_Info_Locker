@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link href="https://fonts.googleapis.com/css2?family=Amita:wght@700&family=Roboto+Slab:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
-
-<body class="flex-column min-100-vh">
-    <header class="hero">
-        <h1 class="app-title"><a href="/dashboard">Dashboard</a></h1>
-        <nav class="navbar">
-            <ul class="flex-row">
-                <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
-
+<body>
     <main class="col-auto">
         {{!-- {{{body}}} --}}
         <h1>Hello, {{username}}</h1>
@@ -35,16 +12,34 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Wesbite Name</label>
+                            <label>Title</label>
                             <div>
-                                <input id="website-name" class="form-control" type="text" placeholder=" ex. 'Google' ">
+                                <input id="website-title" class="form-control" type="text" placeholder=" ex. 'Google' ">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Website Password</label>
+                            <label>Email</label>
                             <div>
-                                <input id="website-password" class="form-control" type="text"
-                                    placeholder="your password">
+                                <input id="website-email" class="form-control" type="text"
+                                    placeholder="your email">
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label>Username</label>
+                            <div>
+                                <input id="website-username" class="form-control" type="text" placeholder="your username">
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label>Password</label>
+                            <div>
+                                <input id="website-password" class="form-control" type="text" placeholder="your password">
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label>URL</label>
+                            <div>
+                                <input id="website-url" class="form-control" type="text" placeholder="url">
                             </div>
                         </div>
                     </div>
@@ -66,23 +61,14 @@
                 <div class="col-3 align-self-center">
                     <button type="button" class=" btn modalbtn btn-primary">Store New Password</button>
                 </div>
+                {{#each password}}
+                {{> single-password password}}
                 <div class="col-9">
                     <div class="row my-1 row-color ">
-                        <p class="text-center text-white my-1 collapsible">Google</p>
+                        <p class="text-center text-white my-1 collapsible">{{password.title}}</p>
                         <p class="content">password: testing</p>
                     </div>
-                    <div class="row my-1 row-color">
-                        <p class="text-center text-white my-1 collapsible">Facebook</p>
-                        <p class="content">password: testing</p>
-                    </div>
-                    <div class="row my-1 row-color">
-                        <p class="text-center text-white my-1 collapsible">Instagram</p>
-                        <p class="content">password: testing</p>
-                    </div>
-                    <div class="row my-1 row-color">
-                        <p class="text-center text-white my-1 collapsible">Twitter</p>
-                        <p class="content">password: testing</p>
-                    </div>
+                {{/each}}  
                    
                 </div>
             </div>
@@ -90,7 +76,7 @@
     </main>
 
     <footer class="footer flex-row justify-center">
-        <a href="/dashboard/new">➕ New Password</a>
+        <a href="/new-password">➕ New Password</a>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -104,5 +90,3 @@
 
 <script src="/javascript/logout.js"></script>
 
-
-</html>
