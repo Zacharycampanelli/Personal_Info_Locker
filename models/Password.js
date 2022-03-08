@@ -13,6 +13,10 @@ Password.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    title: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: true,

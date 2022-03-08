@@ -4,19 +4,19 @@ const sequelize = require('../../config/connection');
 
 
 // get all passwords for homepage
-router.get("/", (req, res) => {
-  Password.findAll({
-      include: [User],
-  })
-      .then((dbPasswordData) => {
-          const passwords = dbPasswordData.map((password) => password.get({ plain: true }));
+// router.get("/", (req, res) => {
+//   Password.findAll({
+//       include: [User],
+//   })
+//       .then((dbPasswordData) => {
+//           const passwords = dbPasswordData.map((password) => password.get({ plain: true }));
 
-          res.render("all-passwords", { passwords });
-      })
-      .catch((err) => {
-          res.status(500).json(err);
-      });
-});
+//           res.render("all-passwords", { passwords });
+//       })
+//       .catch((err) => {
+//           res.status(500).json(err);
+//       });
+// });
 
 
 
