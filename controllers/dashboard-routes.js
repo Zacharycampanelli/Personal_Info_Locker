@@ -1,50 +1,57 @@
-const router = require("express").Router();
-const { Post } = require("../models/");
-const withAuth = require("../utils/auth");
+const router = require('express').Router();
+const { Password, User } = require('../models/');
+const withAuth = require('../utils/auth');
 
-router.get("/", withAuth, (req, res) => {
-    Post.findAll({
-        where: {
-            userId: req.session.userId
-        }
+router.get('/', withAuth, (req, res) => {
+  Password.findAll({
+    attributes: ['id', 'email', 'username', 'password', 'website_url'],
+    include: [
+      {
+          model: User,
+          attributes: ['username']
+      
+      },
+    ],
+  })
+    .then((dbPasswordData) => {
+      const passwords = dbPasswordData.map((password) =>
+        password.get({ plain: true })
+      );
+
+      res.render('all-passwords-admin', {
+        layout: 'dashboard',
+        passwords,
+      });
     })
-        .then(dbPostData => {
-            const posts = dbPostData.map((post) => post.get({ plain: true }));
-
-            res.render("all-posts-admin", {
-                layout: "dashboard",
-                posts
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.redirect("login");
-        });
-});
-
-router.get("/new", withAuth, (req, res) => {
-    res.render("new-post", {
-        layout: "dashboard"
+    .catch((err) => {
+      console.log(err);
+      res.redirect('login');
     });
 });
 
-router.get("/edit/:id", withAuth, (req, res) => {
-    Post.findByPk(req.params.id)
-        .then(dbPostData => {
-            if (dbPostData) {
-                const post = dbPostData.get({ plain: true });
+router.get('/new', withAuth, (req, res) => {
+  res.render('new-password', {
+    layout: 'dashboard',
+  });
+});
 
-                res.render("edit-post", {
-                    layout: "dashboard",
-                    post
-                });
-            } else {
-                res.status(404).end();
-            }
-        })
-        .catch(err => {
-            res.status(500).json(err);
+router.get('/edit/:id', withAuth, (req, res) => {
+  Password.findByPk(req.params.id)
+    .then((dbPasswordData) => {
+      if (dbPasswordData) {
+        const password = dbPasswordData.get({ plain: true });
+
+        res.render('edit-passwords', {
+          layout: 'dashboard',
+          password,
         });
+      } else {
+        res.status(404).end();
+      }
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;

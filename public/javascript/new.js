@@ -1,11 +1,11 @@
 const newFormHandler = async function (event) {
     event.preventDefault();
 
-    const title = document.querySelector('input[name="post-title"]').value;
-    const body = document.querySelector('textarea[name="post-body"]').value;
+    const title = document.querySelector('input[name="password-title"]').value;
+    const body = document.querySelector('textarea[name="password-body"]').value;
 
     const token = localStorage.getItem("token");
-    await fetch(`/api/post`, {
+    await fetch(`/api/password`, {
         method: "POST",
         body: JSON.stringify({
             title,
@@ -21,5 +21,5 @@ const newFormHandler = async function (event) {
 };
 
 document
-    .querySelector("#new-post-form")
+    .querySelector("#new-password-form")
     .addEventListener("submit", newFormHandler);
