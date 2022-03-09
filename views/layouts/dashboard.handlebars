@@ -14,7 +14,7 @@
 
 <body class="flex-column min-100-vh">
     <header class="hero">
-        <h1 class="app-title"><a href="/dashboard">Dashboard</a></h1>
+        <h1 class="app-title"><a href="/">Dashboard</a></h1>
         <nav class="navbar">
             <ul class="flex-row">
                 <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
@@ -24,81 +24,10 @@
 
     <main class="col-auto">
         {{{body}}}
-
-        <!-- Modal HTML -->
-        <div id="myModal" class="modal" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Store a new password</h5>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        {{#each passwords as |password|}}
-                        <li>
-                           {{>password-info password}}
-                              
-                            
-                        </li>
-                        {{/each}}
-                        {{!-- <div class="form-group">
-                            <label>Wesbite Name</label>
-                            <div>
-                                <input id="website-name" class="form-control" type="text" placeholder=" ex. 'Google' ">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Website Password</label>
-                            <div>
-                                <input id="website-password" class="form-control" type="text"
-                                    placeholder="your password">
-                            </div> --}}
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button id="saveBtn" type="button" class="btn btn-primary">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Rows of Passwords -->
-
-        <div class="container container-color">
-            <div class="row">
-                <!-- Button HTML (to Trigger Modal) -->
-                <div class="col-3 align-self-center">
-                    <button type="button" class=" btn modalbtn btn-primary">Store New Password</button>
-                </div>
-                <div class="col-9">
-                    <div class="row my-1 row-color ">
-                        <p class="text-center text-white my-1 collapsible">Google</p>
-                        <p class="content">password: testing</p>
-                    </div>
-                    <div class="row my-1 row-color">
-                        <p class="text-center text-white my-1 collapsible">Facebook</p>
-                        <p class="content">password: testing</p>
-                    </div>
-                    <div class="row my-1 row-color">
-                        <p class="text-center text-white my-1 collapsible">Instagram</p>
-                        <p class="content">password: testing</p>
-                    </div>
-                    <div class="row my-1 row-color">
-                        <p class="text-center text-white my-1 collapsible">Twitter</p>
-                        <p class="content">password: testing</p>
-                    </div>
-                    <div class="row my-1 row-color">
-                        <p class="text-center text-white my-1 collapsible">Gmail</p>
-                        <p class="content">password: testing</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </main>
 
     <footer class="footer flex-row justify-center">
-        <a href="/dashboard/new">➕ Store a new password</a>
+        <a href="/dashboard/new">➕ Store Password</a>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
