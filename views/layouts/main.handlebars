@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,4 +32,53 @@
     </footer>
 </body>
 </html>
-<script src="/javascript/logout.js"></script>
+<script src="/javascript/logout.js"></script> --}}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Info Locker</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,100;1,300&family=Smooch+Sans:wght@100;200;300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body class="flex-column min-100-vh">
+    <header class="hero">
+        <h1 class="app-title"><a href="/dashboard">Personal Info Locker</a></h1>
+        <nav class="navbar">
+        <ul>
+        {{#if loggedIn}}
+        <li class="li-inline nav-item"></li><a href="/dashboard">dashboard</a></li>
+         <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
+        {{else}}
+        <li class="li-inline nav-item"><a href="/login">Login</a></li>
+        <li class="li-inline nav-item"><a href="/signup">Sign up</a></li>
+        {{/if}}
+          </ul>
+    </nav>
+
+    </header>
+
+
+    
+    <main class="col-auto">
+        {{{body}}}
+    </main>
+
+    <footer class="flex-row justify-center">
+        &copy;<script>document.write(new Date().getFullYear());</script> Personal Info Locker
+    </footer>
+
+      {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
