@@ -1,52 +1,232 @@
 * {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* background-image: linear-gradient(rgb(255,255,255),rgb(229,216,220)); */
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Smooch Sans', sans-serif;
+  --primary: #314452;
+  --secondary: #ffffff;
+}
+
+body {
+  background-color: var(--primary);
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Slab", serif;
+  color: var(--secondary);
+  line-height: 1.5;
+  font-size: 16px;
 }
 
 h1 {
-  margin-top: 35px;
-  margin-bottom: 40px;
-  font-size: 55px;
+  font-family: 'Smooch Sans', sans-serif;
+  font-weight: 700;
+  margin: 0;
+  color: var(--secondary);
+  line-height: 1.25;
+  letter-spacing: 1px;
 }
 
-.fade-in-text {
-  /* display: inline-block; */
-  text-align: center;
-  animation: fadeIn linear 4s;
-}
-@keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-p {
-  font-size: 13px;
-  padding-left: 250px;
-  padding-right: 250px;
-}
 
-img {
-  border-radius: 15px;
-}
-
-form {
-
-  font-size: 15px;
-  padding-left: 50px;
-  padding-right: 50px;
-  background-image: linear-gradient(rgb(255,255,255),rgb(229,216,220));
-}
-
-#text {
-  font-size: 15px;
-  margin-top: 15px;
-  width: 200px;
+main {
+  margin: 20px auto;
+  width: 94%;
 }
 
 a {
-  margin-bottom: 15px;
+  text-decoration: none;
 }
-   
+
+p {
+  font-size: 1rem;
+  color: var(--dark);
+}
+
+input {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+.card-header h2 {
+  color: var(--primary);
+  font-family: 'Smooch Sans', sans-serif;
+  font-size: 40px;
+}
+
+.btn {
+  font-size: 1.3rem;
+  text-decoration: none;
+  padding: 6px 5px;
+  width: 100%;
+  display: block;
+  margin: 5px 0;
+  border-radius: var(--border-radius);
+  color: var(--primary);
+  border: none;
+  outline: none;
+  background-color: var(--secondary);
+}
+
+.signupBtn {
+ font-size:25px;
+ color: var(--secondary);
+}
+
+.btn:hover {
+  color: var(--primary);
+}
+
+.btn-inline {
+  display: inline;
+}
+
+.li-inline {
+  display: inline;
+}
+
+.nav-item {
+  margin: 0 40px;
+  font-size: 20px;
+
+}
+
+.nav-item a {
+  color: var(--secondary);
+}
+
+.hero {
+  padding: 3% 4%;
+}
+
+.hero p {
+  max-width: 75%;
+}
+
+.app-title {
+  font-size: 3rem;
+  color: var(--secondary);
+  padding: 0 10px;
+  display: inline-block;
+}
+
+.app-title a {
+  color: var(--secondary);
+  text-align: right;
+}
+
+.list-group {
+  padding: 1%;
+}
+
+.list-item {
+  margin-bottom: 10px;
+  padding-right: 5%;
+  border-radius: var(--border-radius);
+  background-color: var(--dark);
+  color: var(--primary);
+  text-decoration: none;
+}
+
+footer {
+  font-size: 35px;
+}
+
+.footer a {
+  display: inline-block;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  color: #9B9B9B;
+  text-decoration: none;
+}
+
+.container{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+.image {
+   max-width: 100%;
+   width : auto;
+  flex: 0 1 auto;
+}
+
+/* CARDS */
+.card {
+  width: 600px;
+}
+
+.card-header {
+  color: var(--primary);
+  background-color: var(--dark);
+  padding: 2%;
+  font-family: 'Smooch Sans', sans-serif;
+}
+
+.card-body {
+  padding: 1%;
+  color: var(--dark);
+}
+
+.form-label,
+.form-input,
+.form-textarea {
+  display: block;
+}
+
+.form-label {
+  font-size: 1.1rem;
+  margin: 0 0 0 5px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1%;
+  margin: 5px 0;
+  font-size: 1.2rem;
+  border: 1px solid var(--dark);
+  border-radius: var(--border-radius);
+}
+
+.min-100-vh {
+  min-height: 100vh;
+}
+
+.min-100-vw {
+  min-width: 100vw;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.col-auto {
+  flex-grow: 1;
+}
+
+/* New Code */
+
 .row-color {
   background-color: #8FA3EC;
 }
@@ -73,6 +253,33 @@ a {
   display: none;
   overflow: hidden;
   color: #F2F7FF;
+}
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  header {
+    padding-bottom: 0;
+    justify-content: center;
+    position: relative;
+  }
+
+  header h1 {
+    width: 100%;
+    text-align: center;
+  }
+
+  header nav ul {
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+  }
+  .nav-item {
+    margin: 0 25px;
+  }
 }
 
 
