@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Post, Comment, User } = require("../models/");
 
 // get all posts for homepage
-router.get("/", (req, res) => {
+router.get("/post", (req, res) => {
     Post.findAll({
         include: [User],
     })
