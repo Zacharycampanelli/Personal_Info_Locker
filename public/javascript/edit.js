@@ -3,14 +3,20 @@ const postId = document.querySelector('input[name="post-id"]').value;
 const editFormHandler = async function (event) {
     event.preventDefault();
 
-    const title = document.querySelector('input[name="post-title"]').value;
-    const body = document.querySelector('textarea[name="post-body"]').value;
+    const title = document.querySelector('input[name="title"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const username = document.querySelector('input[name="username"]').value;
+    const password = document.querySelector('input[name="password"]').value;
+    const website_url = document.querySelector('input[name="website_url"]').value;
 
     await fetch(`/api/post/${postId}`, {
         method: 'PUT',
         body: JSON.stringify({
             title,
-            body
+            email,
+            username,
+            password,
+            website_url
         }),
         headers: {
             'Content-Type': 'application/json'

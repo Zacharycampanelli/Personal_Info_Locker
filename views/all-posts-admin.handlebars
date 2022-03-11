@@ -1,8 +1,8 @@
-<div class="posts list-group">
-    {{#each posts}}
-    <a class="list-item flex-row justify-space-between" href="/dashboard/edit/{{id}}">
-        <span>Website: {{title}}</span>
-        {{!-- <span>{{format_date createdAt}}</span> --}}
-    </a>
+<ol class="post-list list-group">
+    <p>hi</p>
+     {{#each posts as |post|}}
+    <li>
+        {{> single-post post}}
+    </li>
     {{/each}}
-</div>
+</ol>

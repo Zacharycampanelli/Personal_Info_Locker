@@ -11,14 +11,22 @@ saveBtn.onclick = function () {
     console.log("clicked");
     $("#myModal").modal('hide');
 
-    var websiteName = $('#website-name').val();
-    var websitePassword = $('#website-password').val();
+    var title = $('#title').val();
+    var email = $('#email').val();
+    var username = $('#username').val();
+    var password = $('#password').val();
+    var website_url = $('#website_url').val();
+    console.log|(title, email, username, password, website_url);
+    
 
     var row = $("<div>").addClass("row my-1 row-color");
-    var websiteInfo = $("<p>").addClass("text-center text-white my-1 collapsible").text(websiteName);
-    var password = $("<p>").addClass("content").text("password: " + websitePassword);
+    var title = $("<p>").addClass("text-center text-white my-1 collapsible").text(title);
+    var email = $("<p>").addClass("content").text("Email: " + email);
+    var username = $("<p>").addClass("content").text("Username: " + username);
+    var password = $("<p>").addClass("content").text("password: " + password);
+    var website_url = $("<p>").addClass("content").text("URL: " + website_url);
 
-    $(row).append(websiteInfo, password);
+    $(row).append(title, email, username, password, website_url);
 
     $(".container").append(row);
     $("#collapsible").trigger('create');
