@@ -2,10 +2,14 @@ const router = require("express").Router();
 const { Post } = require("../models/");
 const withAuth = require("../utils/auth");
 
+// router.get("/", (req, res) => {
+//     res.render("frontpage");
+// });
+
 router.get("/", withAuth, (req, res) => {
     Post.findAll({
         where: {
-            userId: req.session.userId
+            user_id: req.session.user_id
         }
     })
         .then(dbPostData => {

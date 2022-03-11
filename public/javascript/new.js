@@ -1,15 +1,21 @@
 const newFormHandler = async function (event) {
     event.preventDefault();
 
-    const title = document.querySelector('input[name="post-title"]').value;
-    const body = document.querySelector('textarea[name="post-body"]').value;
+    const title = await document.querySelector('input[name="title"]').value;
+    const email = await document.querySelector('input[name="email"]').value;
+    const username = await document.querySelector('input[name="username"]').value;
+    const password = await document.querySelector('input[name="password"]').value;
+    const website_url = await document.querySelector('input[name="website_url"]').value;
 
     const token = localStorage.getItem("token");
     await fetch(`/api/post`, {
         method: "POST",
         body: JSON.stringify({
             title,
-            body
+            email, 
+            username,
+            password,
+            website_url
         }),
         headers: {
             "Content-Type": "application/json",

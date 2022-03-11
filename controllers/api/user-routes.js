@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Password } = require('../../models');
+const { User, Post } = require('../../models');
 
 // GET /api/user
 router.get('/', (req, res) => {
@@ -7,8 +7,8 @@ router.get('/', (req, res) => {
     attributes: ['id', 'email', 'username', 'password'],
     include: [
       {
-        model: Password,
-        attributes: ['email', 'username', 'password', 'website_url'],
+        model: Post,
+        attributes: ['title', 'email', 'username', 'password', 'website_url'],
       },
     ],
   })
@@ -27,15 +27,9 @@ router.get('/:id', (req, res) => {
     },
     include: [
       {
-        model: Password,
+        model: Post,
         attributes: [
-          'id',
-          'email',
-          'username',
-          'password',
-          'website_url',
-          'user_id',
-          'updated_at',
+          'title', 'email', 'username', 'password', 'website_url'
         ],
       },
     ],
@@ -62,7 +56,7 @@ router.post('/', (req, res) => {
   })
     .then((dbUserData) => {
       req.session.save(() => {
-        req.session.userId = dbUserData.id;
+        req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.email = dbUserData.email;
         req.session.loggedIn = true;
@@ -96,11 +90,12 @@ router.post('/login', (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.userId = dbUserData.id;
+      req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
 
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
+      //res.json({ user: dbUserData, message: 'You are now logged in!' });
+      res.redirect('/frontpage')
     });
   });
 });
