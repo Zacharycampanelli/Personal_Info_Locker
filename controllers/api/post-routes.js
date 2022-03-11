@@ -2,7 +2,15 @@ const router = require('express').Router();
 const { Post, User } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
-router
+router.get('/', withAuth, (req, res) => {
+    Post.findAll({
+        attributes: ['title', 'email', 'username', 'password', 'website_url'],
+        where: {
+            r
+        }
+    })
+    
+})
 
 router.post('/', withAuth, (req, res) => {
   const body = req.body;

@@ -16,6 +16,7 @@ saveBtn.onclick = function () {
     var username = $('#username').val();
     var password = $('#password').val();
     var website_url = $('#website_url').val();
+    console.log|(title, email, username, password, website_url);
     
 
     var row = $("<div>").addClass("row my-1 row-color");
