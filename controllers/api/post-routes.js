@@ -5,9 +5,7 @@ const withAuth = require('../../utils/auth');
 router.get('/', withAuth, (req, res) => {
     Post.findAll({
         attributes: ['title', 'email', 'username', 'password', 'website_url'],
-        where: {
-            r
-        }
+      
     })
     
 })
