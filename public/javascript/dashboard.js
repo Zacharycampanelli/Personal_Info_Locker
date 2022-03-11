@@ -11,8 +11,12 @@ saveBtn.onclick = function () {
     console.log("clicked");
     $("#myModal").modal('hide');
 
-    var websiteName = $('#website-name').val();
-    var websitePassword = $('#website-password').val();
+    var title = $('#title').val();
+    var email = $('#email').val();
+    var username = $('#username').val();
+    var password = $('#password').val();
+    var website_url = $('#website_url').val();
+    
 
     var row = $("<div>").addClass("row my-1 row-color");
     var websiteInfo = $("<p>").addClass("text-center text-white my-1 collapsible").text(websiteName);

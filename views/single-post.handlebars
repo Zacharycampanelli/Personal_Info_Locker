@@ -2,16 +2,17 @@
     <article class="card">
         <div class="card-header flex-row justify-space-between">
             <h2>{{post.title}}</h2>
-            <div>
-                Posted by {{post.User.username}} on {{format_date post.createdAt}}
-            </div>
         </div>
         <div class="card-body">
-            {{post.body}}
+            {{post.title}}
+            {{post.email}}
+            {{post.username}}
+            {{post.password}}
+            {{post.website_url}}
         </div>
     </article>
-
-    {{#if post.Comments}}
+</div>
+    {{!-- {{#if post.Comments}}
     <section class="card">
         <div class="card-header">
             <h3>Comments</h3>
@@ -47,6 +48,5 @@
             <button type="submit" class="btn">Submit</button>
         </div>
     </form>
-</div>
+</div> --}}
 
-<script src="/javascript/comment.js"></script>

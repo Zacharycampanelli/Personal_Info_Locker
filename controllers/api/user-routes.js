@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Password } = require('../../models');
+const { User, Post } = require('../../models');
 
 // GET /api/user
 router.get('/', (req, res) => {
@@ -7,8 +7,8 @@ router.get('/', (req, res) => {
     attributes: ['id', 'email', 'username', 'password'],
     include: [
       {
-        model: Password,
-        attributes: ['email', 'username', 'password', 'website_url'],
+        model: Post,
+        attributes: ['title', 'email', 'username', 'password', 'website_url'],
       },
     ],
   })
@@ -27,15 +27,9 @@ router.get('/:id', (req, res) => {
     },
     include: [
       {
-        model: Password,
+        model: Post,
         attributes: [
-          'id',
-          'email',
-          'username',
-          'password',
-          'website_url',
-          'user_id',
-          'updated_at',
+          'title', 'email', 'username', 'password', 'website_url'
         ],
       },
     ],
@@ -88,7 +82,7 @@ router.post('/login', (req, res) => {
       return;
     }
 
-    const validPassword = dbUserData.checkPassword(req.body.password);
+    const validPassword = dbUserData.checkPost(req.body.password);
 
     if (!validPassword) {
       res.status(400).json({ message: 'Incorrect password!' });

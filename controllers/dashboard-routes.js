@@ -5,7 +5,7 @@ const withAuth = require("../utils/auth");
 router.get("/", withAuth, (req, res) => {
     Post.findAll({
         where: {
-            userId: req.session.userId
+            user_id: req.session.user_id
         }
     })
         .then(dbPostData => {
@@ -13,7 +13,7 @@ router.get("/", withAuth, (req, res) => {
 
             res.render("all-posts-admin", {
                 layout: "dashboard",
-                posts
+                post
             });
         })
         .catch(err => {
