@@ -2,6 +2,10 @@ const router = require("express").Router();
 const { Post } = require("../models/");
 const withAuth = require("../utils/auth");
 
+// router.get("/", (req, res) => {
+//     res.render("frontpage");
+// });
+
 router.get("/", withAuth, (req, res) => {
     Post.findAll({
         where: {
@@ -13,7 +17,7 @@ router.get("/", withAuth, (req, res) => {
 
             res.render("all-posts-admin", {
                 layout: "dashboard",
-                post
+                posts
             });
         })
         .catch(err => {
