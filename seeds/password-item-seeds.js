@@ -1,7 +1,8 @@
-const { Password } = require('../models');
+const { Post } = require('../models');
 
 const passwordData = [
     {
+        title: 'Website Title',
         email: 'zac2@mail.com',
         username: 'zackattack',
         password: 'notapassword',
@@ -9,6 +10,6 @@ const passwordData = [
         user_id: 1
     }, ];
 
-const seedPasswords = () => Password.bulkCreate(passwordData);
+const seedPosts = () => Post.bulkCreate(passwordData);
 
-module.exports = seedPasswords;
+module.exports = seedPosts;

@@ -1,26 +1,60 @@
-<div class="post card">
-    <div class="card-header">
-        <h2>Create a Post</h2>
+<div class='post card'>
+  <div class='card-header'>
+    <h2>Create a Post</h2>
+  </div>
+  <p>The Password and URL fields are required, all others are optional</p>
+  <form id='new-post-form' class='card-body'>
+
+    <div>
+      <label class='form-label' for='title'>Website Title</label>
+      <input
+        type='text'
+        name='title'
+        value='{{post.title}}'
+        class='form-input'
+      />
     </div>
-    <p>The Password and URL fields are required, all others are optional</p>
-    <form id="new-post-form" class="card-body">
-         <label class="form-label" for="title">Website Title</label>
-        <input type="text" name="title" value="{{post.title}}" class="form-input" />
-
-         <label class="form-label" for="email">Email</label>
-        <input type="text" name="email" value="{{post.email}}" class="form-input" />
-
-         <label class="form-label" for="username">Username</label>
-        <input type="text" name="username" value="{{post.username}}" class="form-input" />
-
-        <label class="form-label" for="password">Password</label>
-        <input type="password" id="password" name="password" value="{{post.password}}" class="form-input" is="password-toggle" />
-
-         <label class="form-label" for="website_url">Website URL</label>
-        <input type="text" name="website_url" value="{{post.website_url}}" class="form-input" />
-
-        <button type="submit" class="saveBtn create-btn">Create</button>
-    </form>
+    <div>
+      <label class='form-label' for='email'>Email</label>
+      <input
+        type='text'
+        name='email'
+        value='{{post.email}}'
+        class='form-input'
+      />
+    </div>
+    <div>
+      <label class='form-label' for='username'>Username</label>
+      <input
+        type='text'
+        name='username'
+        value='{{post.username}}'
+        class='form-input'
+      />
+    </div>
+    <div>
+      <label class='form-label' for='password'>Password</label>
+      <input
+        type='password'
+        id='password'
+        name='password'
+        value='{{post.password}}'
+        class='form-input'
+        is='password-toggle'
+      />
+    </div>
+    <div>
+      <label class='form-label' for='website_url'>Website URL</label>
+      <input
+        type='text'
+        name='website_url'
+        value='{{post.website_url}}'
+        class='form-input'
+      />
+    </div>
+    <br />
+    <button type='submit' class='saveBtn create-btn'>Create</button>
+  </form>
 </div>
 
-<script src="/javascript/new.js"></script>
+<script src='/javascript/new.js'></script>
