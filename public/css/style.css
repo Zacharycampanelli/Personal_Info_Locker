@@ -152,9 +152,12 @@ footer {
   justify-content: space-between;
 }
 .image {
-   max-width: 100%;
-   width : auto;
-  flex: 0 1 auto;
+  width: 300px;
+  margin-left: 10px;
+}
+
+.login-form {
+  min-width: 300px;
 }
 
 /* CARDS */
