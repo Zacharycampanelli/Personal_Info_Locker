@@ -7,7 +7,7 @@
             <li>Website Title: {{title}}</li>
             <li>Email: {{email}}</li>
             <li>Username: {{username}}</li>
-            <li>Password: {{password}}</li>
+            <li>Password: <input type="password" id="password{{id}}" name="password" value="{{password}}" class="form-input" /></li><button data-toggle="password" data-target="#password{{id}}">Toggle</button>
             <li>URL: {{website_url}}</li>
         </ul>
         <a id ="edit-pass-btn" href="/dashboard/edit/{{id}}">➕ Edit Password</a>
