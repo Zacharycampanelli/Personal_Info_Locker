@@ -101,6 +101,21 @@ a::before {
     color: var(--secondary);
 }
 
+#edit-pass-btn {
+    margin-top: 0.5em;
+    padding: 0.3em;
+    background-color: white;
+    color: var(--primary);
+    border-radius: 4px;
+    display:inline-block;
+    font-size: 24px;
+}
+
+#edit-pass-btn:hover {
+    background-color: rgb(158, 157, 157);
+    color: var(--secondary);
+}
+
 footer {
     text-align: center;
     align-items: center;
@@ -184,3 +199,6 @@ h2 {
     margin-right: 10px;
 }
   
+ul {
+    list-style: none;
+}

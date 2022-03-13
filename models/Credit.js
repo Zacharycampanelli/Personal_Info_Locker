@@ -1,11 +1,10 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-// const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 
+class Credit extends Model {}
 
-class Post extends Model {}
-
-Post.init(
+Credit.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -13,43 +12,49 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title:{
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-    email: {
+    title: {
       type: DataTypes.STRING,
       allowNull: true,
+    },
+    cardholder_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
       validate: {
-        isEmail: true,
+        len: [16],
       },
     },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: true,
+    number: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
     },
-    password: {
+    expiration_date: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        len: [4],
+      },
+    },
+    cvv: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1]
-      }
+        len: [3],
+      },
     },
-    website_url: {
-      type: DataTypes.STRING,
+    zip_code: {
+      type: DataTypes.INTEGER,
       allowNull: false,
-      validate: { 
-        isUrl: true
-       }
-      
-    }, 
+      validate: {
+        isCreditCard: true,
+      },
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'id'
-      }
-    }
+        key: 'id',
+      },
+    },
   },
   {
     // hooks: {
@@ -62,8 +67,8 @@ Post.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'post',
+    modelName: 'credit',
   }
 );
 
-module.exports = Post;
+module.exports = Credit;
