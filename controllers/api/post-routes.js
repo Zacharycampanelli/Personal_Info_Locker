@@ -28,7 +28,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 router.put('/:id', withAuth, (req, res) => {
-  Post.update(
+  Post.update(req.body,
     {
       // individualHooks: true,
       where: {
@@ -44,7 +44,7 @@ router.put('/:id', withAuth, (req, res) => {
     }
   )
     .then((dbPostData) => {
-      console.log(title, email, username, password, website_url);
+      
       if (!dbPostData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
