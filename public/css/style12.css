@@ -49,15 +49,26 @@ body::after{
     width: 96%;  
     padding: 10%;
     border-radius: 5%;
-    color: orange;
+    color: #314452;
+    font-weight: bold;
+    font-size: 18px;
+    font-stretch: expanded;
+    letter-spacing: 1px;
 }
 
-.container2 {
-    position: absolute;
-    width: 300px;
-    height: 200px;
-    z-index: 15;
-    top: 100%;
-    left: 50%;
-    margin: -100px 0 0 -150px;
-  }
+#gen-pass-btn {
+    margin-top: 12px;
+    padding: 6px;
+    background-color: white;
+    color: var(--primary);
+    border-radius: 4px;
+    display:inline-block;
+    font-size: 30px;
+}
+
+#gen-pass-btn:hover {
+    background-color: rgb(158, 157, 157);
+    color: var(--secondary);
+}
+
+
