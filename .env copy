@@ -1,0 +1,3 @@
+DB_NAME='repository name'
+DB_USER='mysql username'
+DB_PW='mysql password'
