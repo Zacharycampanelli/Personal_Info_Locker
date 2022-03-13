@@ -116,7 +116,7 @@ a::before {
     color: var(--secondary);
 }
 
-footer {
+.footer {
     text-align: center;
     align-items: center;
 }
