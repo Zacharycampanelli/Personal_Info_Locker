@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
     Credit.findAll({
-    attributes: ['title', 'email', 'username', 'password', 'website_url'],
+    attributes: ['title', 'cardholder_name', 'number', 'expiration_date', 'cvv', 'zip_code'],
   });
 });
 

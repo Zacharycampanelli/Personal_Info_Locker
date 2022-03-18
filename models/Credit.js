@@ -20,7 +20,7 @@ Credit.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [16],
+        isCreditCard: true,
       },
     },
     number: {
@@ -35,7 +35,7 @@ Credit.init(
       },
     },
     cvv: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
         len: [3],
@@ -45,7 +45,7 @@ Credit.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
-        isCreditCard: true,
+        len: [5],
       },
     },
     user_id: {

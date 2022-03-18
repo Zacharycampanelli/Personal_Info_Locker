@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post } = require('../../models');
+const { User, Post, Credit } = require('../../models');
 
 // GET /api/user
 router.get('/', (req, res) => {
@@ -9,6 +9,17 @@ router.get('/', (req, res) => {
       {
         model: Post,
         attributes: ['title', 'email', 'username', 'password', 'website_url'],
+      },
+      {
+        model: Credit,
+        attributes: [
+          'title',
+          'cardholder_name',
+          'number',
+          'expiration_date',
+          'cvv',
+          'zip_code',
+        ],
       },
     ],
   })
@@ -28,8 +39,17 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Post,
+        attributes: ['title', 'email', 'username', 'password', 'website_url'],
+      },
+      {
+        model: Credit,
         attributes: [
-          'title', 'email', 'username', 'password', 'website_url'
+          'title',
+          'cardholder_name',
+          'number',
+          'expiration_date',
+          'cvv',
+          'zip_code',
         ],
       },
     ],
@@ -95,7 +115,7 @@ router.post('/login', (req, res) => {
       req.session.loggedIn = true;
 
       //res.json({ user: dbUserData, message: 'You are now logged in!' });
-      res.redirect('/frontpage')
+      res.redirect('/frontpage');
     });
   });
 });
@@ -114,24 +134,24 @@ router.post('/logout', (req, res) => {
 /////CHECK!!!
 // PUT api/user/id
 router.put('/:id', (req, res) => {
-    User.update(req.body, {
-      individualHooks: true,
-      where: {
-        id: req.params.id,
-      },
+  User.update(req.body, {
+    individualHooks: true,
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((dbUserData) => {
+      if (!dbUserData[0]) {
+        res.status(404).json({ message: 'No user found with this id' });
+        return;
+      }
+      res.json(dbUserData);
     })
-      .then((dbUserData) => {
-        if (!dbUserData[0]) {
-          res.status(404).json({ message: 'No user found with this id' });
-          return;
-        }
-        res.json(dbUserData);
-      })
-      .catch((err) => {
-        console0.log(err);
-        res.status(500).json(err);
-      });
-  });
+    .catch((err) => {
+      console0.log(err);
+      res.status(500).json(err);
+    });
+});
 
 //// CHECK
 // Delete /api/user/id
