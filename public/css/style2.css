@@ -203,11 +203,13 @@ h2 {
     margin-top: 2vh;
     margin-bottom: 2vh;
 }
+
+.password_title {
+    color: var(--primary);
+    text-align: left;
+}
   
 ul {
     list-style: none;
 }
 
-button {
-    
-}

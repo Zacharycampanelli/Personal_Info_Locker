@@ -1,8 +1,12 @@
 <div class="post col-10 mx-auto">
     <article class="card">
         <div class="card-header flex-row justify-space-between">
-            <h2>{{title}}</h2>
+            <a class="password_title" data-bs-toggle="collapse" href="#collapsePass{{id}}" role="button" aria-expanded="false" aria-controls="collapsePass{{id}}">
+    <h2>{{title}}</h2>
+  </a>
+            
         </div>
+        <div class="collapse" id="collapsePass{{id}}">
         <ul class="card-body">
             <li>Website Title: {{title}}</li>
             <li>Email: {{email}}</li>
@@ -10,6 +14,7 @@
             <li>Password: <input type="password" id="password{{id}}" name="password" value="{{password}}" class="form-input" /></li><button data-toggle="password" data-target="#password{{id}}">Toggle</button>
             <li>URL: {{website_url}}</li>
         </ul>
+        </div>
         <a id ="edit-pass-btn" href="/dashboard/edit/{{id}}">➕ Edit Password</a>
     </article>
 </div>

@@ -64,9 +64,9 @@ body::after{
     color: var(--primary);
     border-radius: 4px;
     display:inline-block;
-    font-size: 30px;
-    height: 5vh;
-    max-height: 5vh;
+    font-size: 24px;
+    height: 10vh;
+    max-height: 10vh;
 }
 
 
@@ -76,7 +76,9 @@ body::after{
 }
 
 #gen-pass-input {
-     height: 5vh;
-     max-height: 5vh;
-     width: 25vw
+     height: 10vh;
+     max-height: 10vh;
+     width: 25vw;
+     padding: 5px;
+     font-size: 24px;
 }
