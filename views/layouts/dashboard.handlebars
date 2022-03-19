@@ -32,15 +32,15 @@
         <a id="store-pass-btn" href="/dashboard/new">➕ Store Password</a>
     </div>
 
-    <div class="d-flex justify-content-center">
-        <div class="row align-items-center">
-            <div class="col">
+    <div class="d-flex justify-content-evenly">
+        <div class="row align-items-start flex-nowrap justify-content-evenly">
+            <div class="col-3 passwordGen text-center">
                 <button id="gen-pass-btn" type='button' value='generate'
-                    onclick='document.getElementById("p").value = Password.generate(16)'>Generate Random Password
+                    onclick='document.getElementById("gen-pass-input").value = Password.generate(16)'>Generate Random Password
                 </button>
             </div>
-            <div class="col">
-                <input class="passwordGen" type='text' id='p' /><br />
+            <div class="col-3 passwordGen text-center">
+                <input id="gen-pass-input" type='text'  /><br />
             </div>
         </div>
     </div>
