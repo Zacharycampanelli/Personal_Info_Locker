@@ -198,6 +198,11 @@ h2 {
     margin-left: 10px;
     margin-right: 10px;
 }
+
+.post {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
   
 ul {
     list-style: none;
