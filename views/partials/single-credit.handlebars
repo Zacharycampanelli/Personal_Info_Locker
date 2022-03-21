@@ -1,0 +1,22 @@
+<div class="post col-10 mx-auto">
+    <article class="card">
+        <div class="card-header flex-row justify-space-between">
+            <a class="password_title" data-bs-toggle="collapse" href="#collapsePass{{id}}" role="button" aria-expanded="false" aria-controls="collapsePass{{id}}">
+    <h2>{{title}}</h2>
+  </a>
+            
+        </div>
+        <div class="collapse" id="collapsePass{{id}}">
+        <ul class="card-body">
+            <li>Title: {{title}}</li>
+            <li>Cardholder: {{cardholder_name}}</li>
+            <li>Card #: <input type="password" id="credit{{id}}" name="credit" value="{{number}}" class="form-input" /></li><button data-toggle="credit" data-target="#credit{{id}}">Toggle</button>
+            <li>Expiration Date: {{expiration_date}}</li>
+            <li>CVV: {{cvv}}</li>
+            <li>Zip Code: {{zip_code}}</li>
+        </ul>
+        </div>
+        <a id ="edit-pass-btn" href="/dashboard/edit/{{id}}">➕ Edit Password</a>
+    </article>
+</div>
+  

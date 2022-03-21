@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Post } = require("../models/");
+const { Post, Credit, User } = require("../models/");
 const withAuth = require("../utils/auth");
 
 // router.get("/", (req, res) => {
@@ -48,6 +48,26 @@ router.get("/edit/:id", withAuth, (req, res) => {
         })
         .catch(err => {
             res.status(500).json(err);
+        });
+});
+
+router.get("/credit", withAuth, (req, res) => {
+    Credit.findAll({
+        where: {
+            user_id: req.session.user_id
+        }
+    })
+        .then(dbCreditData => {
+            const credits = dbCreditData.map((credit) => credit.get({ plain: true }));
+
+            res.render("all-credit-admin", {
+                layout: "dashboard",
+                credits
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.redirect("login");
         });
 });
 
