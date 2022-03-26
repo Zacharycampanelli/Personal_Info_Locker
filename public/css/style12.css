@@ -46,6 +46,7 @@ body::after{
 } */
 
 .passwordGen {
+    margin-top: 12px;
     width: 96%;  
     padding: 10%;
     border-radius: 5%;
@@ -57,18 +58,27 @@ body::after{
 }
 
 #gen-pass-btn {
-    margin-top: 12px;
-    padding: 6px;
+    
+    width: 25vw;
     background-color: white;
     color: var(--primary);
     border-radius: 4px;
     display:inline-block;
-    font-size: 30px;
+    font-size: 24px;
+    height: 10vh;
+    max-height: 10vh;
 }
+
 
 #gen-pass-btn:hover {
     background-color: rgb(158, 157, 157);
     color: var(--secondary);
 }
 
-
+#gen-pass-input {
+     height: 10vh;
+     max-height: 10vh;
+     width: 25vw;
+     padding: 5px;
+     font-size: 24px;
+}

@@ -8,11 +8,12 @@
         </div>
         <div class="collapse" id="collapsePass{{id}}">
         <ul class="card-body">
-            <li>Website Title: {{title}}</li>
-            <li>Email: {{email}}</li>
-            <li>Username: {{username}}</li>
-            <li>Password: <input type="password" id="password{{id}}" name="password" value="{{password}}" class="form-input" /></li><button data-toggle="password" data-target="#password{{id}}">Toggle</button>
-            <li>URL: {{website_url}}</li>
+            <li>Title: {{title}}</li>
+            <li>Cardholder: {{cardholder_name}}</li>
+            <li>Card #: <input type="password" id="credit{{id}}" name="credit" value="{{number}}" class="form-input" /></li><button data-toggle="credit" data-target="#credit{{id}}">Toggle</button>
+            <li>Expiration Date: {{expiration_date}}</li>
+            <li>CVV: {{cvv}}</li>
+            <li>Zip Code: {{zip_code}}</li>
         </ul>
         </div>
         <a id ="edit-pass-btn" href="/dashboard/edit/{{id}}">➕ Edit Password</a>

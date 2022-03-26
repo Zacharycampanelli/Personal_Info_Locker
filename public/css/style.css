@@ -60,6 +60,10 @@ input {
   font-size: 40px;
 }
 
+.nav{
+  font-size: 24px;
+}
+
 .btn {
   font-size: 1.3rem;
   text-decoration: none;

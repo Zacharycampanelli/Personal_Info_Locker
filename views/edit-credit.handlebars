@@ -1,0 +1,55 @@
+<div class="post card">
+    <div class="card-header">
+        <h2>Edit Credit Card</h2>
+    </div>
+    <form id="edit-credit-form" class="card-body">
+ <label class='form-label' for='title'>Card Title</label>
+      <input
+        type='text'
+        name='title'
+        value='{{post.title}}'
+        class='form-input'
+      />
+
+      <label class='form-label' for='cardholder_name'>Cardholder's Name</label>
+      <input
+        type='text'
+        name='cardholder_name'
+        value='{{post.cardholder_name}}'
+        class='form-input'
+      />
+
+      <label class='form-label' for='number'>Credit Card Number</label>
+      <input
+        type='text'
+        name='number'
+        value='{{post.number}}'
+        class='form-input'
+      />
+
+      <label class='form-label' for='expiration_date'>Expiration Date</label>
+      <input
+        type='text'
+        name='expiration_date'
+        value='{{post.expiration_date}}'
+        class='form-input'
+      />
+
+      <label class='form-label' for='cvv'>CVV</label>
+      <input type='text' name='cvv' value='{{post.cvv}}' class='form-input' />
+
+      <label class='form-label' for='zip_code'>Zip Code</label>
+      <input
+        type='text'
+        name='zip_code'
+        value='{{post.zip_code}}'
+        class='form-input'
+      />
+
+        <button type="submit" class="btn update-btn">Update</button>
+
+        <button type="button" id="delete-btn" class="btn delete-btn">Delete</button>
+    </form>
+</div>
+
+<script src="/javascript/edit-credit.js"></script>
